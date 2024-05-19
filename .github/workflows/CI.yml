@@ -100,12 +100,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Start Redis Local Server
-        run: REDISMS_PORT=6379 npx redis-memory-server
-
-      - run: pnpm build --if-present
+      - name: Build Next.js
+        run: pnpm cross-env REDISMS_PORT=6379 npx redis-memory-server & pnpm build
         env: 
-          REDIS_URL: redis://localhost:6379
+          REDIS_URL: redis://127.0.0.1:6379
 
   test:
     needs: cache-and-install
@@ -153,7 +151,9 @@ jobs:
       #     fi
 
       - name: Build Next.js for E2E tests
-        run: pnpm build
+        run: pnpm cross-env REDISMS_PORT=6379 npx redis-memory-server & pnpm build
+        env: 
+          REDIS_URL: redis://127.0.0.1:6379
 
       - if: github.event_name == 'pull_request'
         name: Validate all commits from PR
