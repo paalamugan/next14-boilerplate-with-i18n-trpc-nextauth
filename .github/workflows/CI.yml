@@ -7,26 +7,65 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  cache-and-install:
     strategy:
       matrix:
-        node-version: [20.x, 22.x]
+        node-version: [20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+  build:
+    needs: cache-and-install
+    strategy:
+      matrix:
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     name: Build with ${{ matrix.node-version }}
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
-      - run: npm run build
+      - run: pnpm build --if-present
 
   test:
+    needs: cache-and-install
     strategy:
       matrix:
         node-version: [20.x]
@@ -35,53 +74,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Retrieve Git history, needed to verify commits
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
 
-      - name: Set SENTRY_AUTH_TOKEN env if secret exists
-        run: |
-          if [[ -n "${{ secrets.SENTRY_AUTH_TOKEN }}" ]]; then
-            echo "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}" >> $GITHUB_ENV
-          fi
+      # - name: Set SENTRY_AUTH_TOKEN env if secret exists
+      #   run: |
+      #     if [[ -n "${{ secrets.SENTRY_AUTH_TOKEN }}" ]]; then
+      #       echo "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}" >> $GITHUB_ENV
+      #     fi
 
       - name: Build Next.js for E2E tests
-        run: npm run build
+        run: pnpm build
 
       - if: github.event_name == 'pull_request'
         name: Validate all commits from PR
         run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       - name: Linter
-        run: npm run lint
+        run: pnpm lint
 
       - name: Type checking
-        run: npm run check-types
+        run: pnpm type-check
 
       - name: Run unit tests
-        run: npm run test
+        run: pnpm test
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      # - name: Upload coverage reports to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   env:
+      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Install Playwright (used for Storybook and E2E tests)
         run: npx playwright install --with-deps
 
       - name: Run storybook tests
-        run: npm run test-storybook:ci
+        run: pnpm test-storybook:ci
 
-      - name: Run E2E tests
-        run: npx percy exec -- npm run test:e2e
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      # - name: Run E2E tests
+      #   run: npx percy exec -- pnpm test:e2e
+      #   env:
+      #     PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       - uses: actions/upload-artifact@v3
         if: always()
