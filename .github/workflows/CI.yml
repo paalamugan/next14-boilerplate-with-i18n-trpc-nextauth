@@ -73,8 +73,8 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           run_install: |
-            - recursive: true
-              args: [--frozen-lockfile]
+            pnpm install --frozen-lockfile
+            
       - run: pnpm build --if-present
 
   test:
