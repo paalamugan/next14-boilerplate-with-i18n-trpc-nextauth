@@ -1,5 +1,6 @@
 {
   "name": "next14-with-next-auth-boilerplate",
+  "description": "Next.js 14 boilerplate with NextAuth.js, TRPC, Tailwind CSS, TypeScript, Redis, Drizzle ORM, React Query, Storybook, Playwright, Jest, Testing Library, ESLint, Prettier, Husky, Lint-staged, Commitizen, Semantic Release, Spotlight, Argon2, Luxon, Zod, Superjson, Tailwind CSS, Stylelint",
   "version": "1.0.0",
   "author": "Paalamugan (https://github.com/paalamugan)",
   "license": "MIT",
