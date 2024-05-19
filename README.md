@@ -1,6 +1,6 @@
 # Next.js 14+ boilerplate with Next Auth, TRPC, Tailwind CSS 3.4 and TypeScript
 
-🚀  Next.js 14 biolerplate with App Router support, Next Auth, [TRPC](https://trpc.io/), Tailwind CSS and TypeScript ⚡️ Prioritizing developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Testing Library, Commitlint, VSCode, PostCSS, Tailwind CSS, Authentication with [NextAuth](https://next-auth.js.org), Database with DrizzleORM (SQLite, PostgreSQL, and MySQL) and [Turso](https://turso.tech/), Error Monitoring with [Sentry](https://sentry.io/for/nextjs), Logging with Pino.js and Log Management, Monitoring as Code, Storybook, Multi-language (i18n), and more.
+🚀 Next.js 14 biolerplate with App Router support, Next Auth, [TRPC](https://trpc.io/), Tailwind CSS and TypeScript ⚡️ Prioritizing developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Testing Library, Commitlint, VSCode, PostCSS, Tailwind CSS, Authentication with [NextAuth](https://next-auth.js.org), Database with DrizzleORM (SQLite, PostgreSQL, and MySQL) and [Turso](https://turso.tech/), Error Monitoring with [Sentry](https://sentry.io/for/nextjs), Logging with Pino.js and Log Management, Monitoring as Code, Storybook, Multi-language (i18n), and more.
 
 Clone this project and use it to create your own [Next.js](https://nextjs.org) project. You can check a demo in [here](https://next14-boilerplate.paalamugan.com).
 
