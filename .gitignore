@@ -1,0 +1,73 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.npm
+
+# Database
+*.db
+
+# testing
+coverage
+.swc
+junit.xml
+
+# storybook
+storybook-static
+build-storybook.log
+.nyc_output
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# next.js
+/.next
+/out
+
+# cache
+.swc/
+
+# production
+.next
+build
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# debug
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# local folder
+local
+
+# vercel
+.vercel
+.turbo
+cache
+
+# Cache Files
+.eslintcache
+.eslintjscache
+.eslintmdcache
+.stylelintcache
+.prettiercache
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Sentry Config File
+.sentryclirc
+
+migrations

@@ -1,0 +1,53 @@
+{
+  "css.validate": false, // Disable CSS validation to prevent conflicts with styelint
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "search.exclude": {
+    "package-lock.json": true
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.fixAll.eslint",
+    "source.fixAll.stylelint",
+    "source.fixAll.markdownlint"
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsdk": "node_modules/typescript/lib", // Use the workspace version of TypeScript
+  "typescript.enablePromptUseWorkspaceTsdk": true, // For security reasons it's require that users opt into using the workspace version of typescript
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    // useRouter should be imported from `next/navigation` instead of `next/router`
+    "next/router.d.ts",
+    "next/dist/client/router.d.ts"
+  ],
+  "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
+  "jest.runMode": {
+    "type": "on-save",
+    "testFileOnly": true,
+    "coverage": true
+  }, // Configure Jest extension
+  // Multiple language settings for json and jsonc files
+  "[json][jsonc][yaml][css]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.ignorePath": ".gitignore", // Don't run prettier for files listed in .gitignore
+  "i18n-ally.localesPaths": ["src/i18n", "src/i18n/locales"],
+  "i18n-ally.keystyle": "nested",
+  "cSpell.words": [
+    "conventionalcommits",
+    "favicons",
+    "heroicons",
+    "Jiti",
+    "libsql",
+    "LOGTAIL",
+    "luxon",
+    "stylelint",
+    "superjson",
+    "trpc",
+    "unoptimized",
+    "zustand"
+  ]
+}

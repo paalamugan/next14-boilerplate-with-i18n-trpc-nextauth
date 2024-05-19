@@ -1,0 +1,42 @@
+[
+  {
+    "code": "de",
+    "localName": "Deutsch",
+    "name": "German",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "de",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "en",
+    "localName": "English",
+    "name": "English",
+    "langDir": "ltr",
+    "dateFormat": "MM.DD.YYYY",
+    "hrefLang": "en-GB",
+    "enabled": true,
+    "default": true
+  },
+  {
+    "code": "es",
+    "localName": "Español",
+    "name": "Spanish",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "es-ES",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "fr",
+    "localName": "Français",
+    "name": "French",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "fr",
+    "enabled": true,
+    "default": false
+  }
+]
