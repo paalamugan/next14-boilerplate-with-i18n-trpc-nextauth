@@ -11,7 +11,9 @@ env:
   NEXTAUTH_URL: http://localhost:3000
   NEXT_PUBLIC_APP_URL: http://localhost:3000
   NEXTAUTH_SECRET: yc2t4Jt+9tl0IBPHbpkLymkPGZqIJ4pmPKAkRUSbpuI=
-
+  NEXT_TELEMETRY_DEBUG: 1
+  TURBO_TELEMETRY_DISABLED: 1
+  
 jobs:
   cache-and-install:
     strategy:
