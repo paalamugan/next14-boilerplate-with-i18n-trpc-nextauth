@@ -3,7 +3,7 @@
 import type { FormEventHandler } from 'react';
 
 import { useSession } from '@/stores/session-store';
-import { api } from '@/trpc/react';
+import { api } from '@/trpc/client';
 
 export const AuthScreen: React.FC = () => {
   const session = useSession();

@@ -1,6 +1,6 @@
 'use client';
 
-import { api } from '@/trpc/react';
+import { api } from '@/trpc/client';
 
 export const ClientFetch = () => {
   const { data, isPending } = api.user.userById.useQuery();

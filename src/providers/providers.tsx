@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 
-import { TRPCReactProvider } from '@/trpc/react';
+import { TRPCReactProvider } from '@/trpc/client';
 
 import { LocaleProvider } from './LocaleProvider';
 import { ThemeProvider } from './ThemeProvider';
