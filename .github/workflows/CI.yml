@@ -44,6 +44,10 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          DATABASE_URL: file:next14-boilerplate.db
+          NEXTAUTH_URL: http://localhost:3000
+          NEXT_PUBLIC_APP_URL: http://localhost:3000
 
   build:
     needs: cache-and-install
