@@ -169,6 +169,9 @@ jobs:
       #       echo "SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}" >> $GITHUB_ENV
       #     fi
 
+      - name: Migrate database
+        run: pnpm db:migrate
+
       - name: Build Next.js for E2E tests
         run: pnpm build
         env: 
