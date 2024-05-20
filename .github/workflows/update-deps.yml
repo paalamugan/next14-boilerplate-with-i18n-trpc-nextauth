@@ -3,8 +3,8 @@ name: Update dependencies
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"
-
+    - cron: "0 0 1 * *" # Run at 00:00 on the first day of every month
+      
 jobs:
   update:
     strategy:
@@ -20,12 +20,30 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
+      - name: Install pnpm 
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+  
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+  
+      - name: Setup pnpm cache 
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - run: npx npm-check-updates -u # Update dependencies
-      - run: rm -Rf node_modules package-lock.json
-      - run: npm install
+      - run: rm -Rf node_modules pnpm-lock.yaml # Remove node_modules and pnpm-lock.yaml
+      - run: pnpm install
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:

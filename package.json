@@ -20,6 +20,7 @@
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache --max-warnings 0",
     "lint": "turbo run lint:md lint:js lint:css",
     "lint:fix": "turbo run lint:md lint:js lint:css --no-cache -- --fix",
+    "validate": "run-p type-check lint",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",

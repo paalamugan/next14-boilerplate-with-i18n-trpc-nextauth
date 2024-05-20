@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { DateTime } from 'luxon';
 
-import { env } from '@/env';
 import pc from '@/server/api/common/pc';
 import type { ILogger } from '@/types/logger';
 
@@ -16,7 +15,12 @@ export class Logger implements ILogger {
     messages: unknown[],
     colorFn: (s: string) => string
   ): void {
-    if (env.NODE_ENV !== 'production' || type === 'log' || type === 'info' || type === 'error') {
+    if (
+      process.env.NODE_ENV !== 'production' ||
+      type === 'log' ||
+      type === 'info' ||
+      type === 'error'
+    ) {
       const prefix = colorFn(
         `[${type.toUpperCase()} - ${DateTime.now().toLocaleString(
           DateTime.DATETIME_FULL

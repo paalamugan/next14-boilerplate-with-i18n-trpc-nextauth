@@ -8,4 +8,4 @@ const globalForRedis = globalThis as unknown as { redis: Redis };
 
 export const redis = globalForRedis.redis ?? new Redis(LOCAL_REDIS_URL);
 
-if (env.NODE_ENV !== 'production') globalForRedis.redis = redis;
+if (process.env.NODE_ENV !== 'production') globalForRedis.redis = redis;

@@ -8,7 +8,6 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    NODE_ENV: z.enum(['development', 'test', 'production']).optional(),
     DATABASE_URL: z.string(),
     DATABASE_AUTH_TOKEN: z.string().optional(),
     REDIS_URL: z.string().optional(),
@@ -39,7 +38,6 @@ export const env = createEnv({
    */
   runtimeEnv: {
     ANALYZE: process.env.ANALYZE,
-    NODE_ENV: process.env.NODE_ENV,
     DATABASE_URL: process.env.DATABASE_URL,
     DATABASE_AUTH_TOKEN: process.env.DATABASE_AUTH_TOKEN,
     REDIS_URL: process.env.REDIS_URL,
