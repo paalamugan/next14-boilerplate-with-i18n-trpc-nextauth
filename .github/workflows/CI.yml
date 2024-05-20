@@ -198,6 +198,9 @@ jobs:
       - name: Run storybook tests
         run: pnpm test-storybook:ci
 
+      - name: Run E2E tests
+        run: pnpm test:e2e:ci
+
       # - name: Run E2E tests
       #   run: npx percy exec -- pnpm test:e2e
       #   env:

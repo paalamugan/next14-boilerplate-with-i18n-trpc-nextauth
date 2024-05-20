@@ -30,6 +30,7 @@
     "test": "turbo test:unit",
     "test:e2e": "playwright test",
     "test:e2e:ui": "npm run test:e2e -- --ui",
+    "test:e2e:ci": "start-server-and-test start http://127.0.0.1:3000 test:e2e",
     "db:generate": "dotenv -c -- drizzle-kit generate --name init_db",
     "db:migrate": "dotenv -c -- drizzle-kit migrate",
     "db:studio": "dotenv -c -- drizzle-kit studio",
