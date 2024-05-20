@@ -2,12 +2,12 @@ import { availableLocaleCodes, defaultLocale, localePrefix } from './next.locale
 
 /** @type {import('../src/types').SiteConfig} */
 const site = {
-  title: 'Next14 With Next Auth Boilerplate',
+  title: 'Next14 boilerplate with Next Auth and Next Intl',
   description:
-    'Next14 is a Next.js boilerplate with NextAuth.js, TRPC, Tailwind CSS, and Internationalization support.',
+    'Next14 is a Starter Next.js boilerplate with NextAuth, i18n, TRPC, Tailwind CSS, and Internationalization support.',
   favicon: '/static/favicons/favicon.png',
   github: {
-    repoLink: 'https://github.com/paalamugan/next14-with-next-auth-boilerplate',
+    repoLink: 'https://github.com/paalamugan/next14-boilerplate-with-i18n-and-next-auth',
   },
   twitter: {
     username: '@next14',

@@ -38,6 +38,6 @@ export default function middleware(request: NextRequestWithAuth, event: NextFetc
 
 export const config = {
   // The following matcher runs middleware on all routes
-  // except static assets.
-  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)', '/:locale/(api|trpc)(.*)'],
+  // except static assets and API routes.
+  matcher: ['/((?!.+\\.[\\w]+$|_next|api|trpc).*)', '/'],
 };

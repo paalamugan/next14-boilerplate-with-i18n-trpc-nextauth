@@ -1,8 +1,8 @@
-# Next.js 14+ boilerplate with Next Auth, TRPC, Tailwind CSS 3.4 and TypeScript
+# Next.js 14+ boilerplate with Next Auth and Next Intl, TRPC, Tailwind CSS 3.4 and TypeScript
 
-🚀 Next.js 14 biolerplate with App Router support, Next Auth, [TRPC](https://trpc.io/), Tailwind CSS and TypeScript ⚡️ Prioritizing developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Testing Library, Commitlint, VSCode, PostCSS, Tailwind CSS, Authentication with [NextAuth](https://next-auth.js.org), Database with DrizzleORM (SQLite, PostgreSQL, and MySQL) and [Turso](https://turso.tech/), Error Monitoring with [Sentry](https://sentry.io/for/nextjs), Logging with Pino.js and Log Management, Monitoring as Code, Storybook, Multi-language (i18n), and more.
+🚀 Next.js 14 biolerplate with App Router support, Next Auth, Next Intl, [TRPC](https://trpc.io/), Tailwind CSS and TypeScript ⚡️ Prioritizing developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, Testing Library, Commitlint, VSCode, PostCSS, Tailwind CSS, Authentication with [NextAuth](https://next-auth.js.org), Database with DrizzleORM (SQLite, PostgreSQL, and MySQL) and [Turso](https://turso.tech/), Error Monitoring with [Sentry](https://sentry.io/for/nextjs), Logging with Pino.js and Log Management, Monitoring as Code, Storybook, Multi-language (i18n), and more.
 
-Clone this project and use it to create your own [Next.js](https://nextjs.org) project. You can check a demo in [here](https://next14-boilerplate.paalamugan.com).
+Clone this project and use it to create your own [Next.js](https://nextjs.org) project. This project is a minimalistic boilerplate for Next.js with the following features:
 
 ## Features
 
@@ -68,7 +68,7 @@ Built-in feature from Next.js:
 Run the following command on your local environment:
 
 ```shell
-git clone --depth=1 https://github.com/paalamugan/next14-with-next-auth-boilerplate my-project-name
+git clone --depth=1 https://github.com/paalamugan/next14-boilerplate-with-i18n-and-next-auth my-project-name
 cd my-project-name
 ```
 

@@ -15,5 +15,5 @@ export const db = drizzle(client, { logger: false });
 // Only run migrate in development. Otherwise, migrate will also be run during the build which can cause errors.
 // Migrate during the build can cause errors due to the locked database when multiple migrations are running at the same time.
 if (env.DB_MIGRATIONS_ENABLED) {
-  migrate(db, { migrationsFolder: './migrations' });
+  migrate(db, { migrationsFolder: './migrations' }).catch(_error => {});
 }

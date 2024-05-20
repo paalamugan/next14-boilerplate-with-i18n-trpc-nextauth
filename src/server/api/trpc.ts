@@ -7,7 +7,8 @@
  * need to use are documented accordingly near the end.
  */
 import { initTRPC, TRPCError } from '@trpc/server';
-import type { JWT } from 'next-auth/jwt';
+import type { NextRequest } from 'next/server';
+import { getToken } from 'next-auth/jwt';
 import superjson from 'superjson';
 import { ZodError } from 'zod';
 
@@ -27,9 +28,7 @@ import { authService } from './routers/auth/service/auth.service';
  */
 interface CreateContextOptions {
   headers: Headers;
-  req: Request;
-  token: JWT | null;
-  locale: string;
+  req: NextRequest;
 }
 
 /**
@@ -45,8 +44,11 @@ interface CreateContextOptions {
  * @see https://trpc.io/docs/server/context
  */
 export const createTRPCContext = async (opts: CreateContextOptions) => {
+  const token = await getToken({ req: opts.req });
+
   return {
     ...opts,
+    token,
     db,
   };
 };

@@ -16,6 +16,22 @@ const redirects = {
     { source: '/health', destination: '/api/health' },
     { source: '/ping', destination: '/api/health' },
     { source: '/api/ping', destination: '/api/health' },
+    {
+      source: '/(static/|)favicon.ico',
+      destination: '/static/favicons/favicon.ico',
+    },
+    {
+      source: '/(static/|)favicon.png',
+      destination: '/static/favicons/favicon.ico',
+    },
+    {
+      source: '/(static/|)apple-touch-icon(.*).png',
+      destination: '/static/favicons/apple-touch-icon.png',
+    },
+    {
+      source: '/(static/)logo.png',
+      destination: '/static/images/logo.png',
+    },
   ],
   internals: [],
   rewrites: {

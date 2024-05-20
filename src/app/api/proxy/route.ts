@@ -20,8 +20,7 @@ async function handler(request: NextRequest) {
   const headers = new Headers(request.headers);
   headers.set('Authorization', `Bearer ${session?.accessToken}`);
 
-  const backendUrl =
-    process.env.THIRD_PARTY_BACKEND_ENDPOINT ?? 'https://authjs-third-party-backend.authjs.dev';
+  const backendUrl = process.env.THIRD_PARTY_BACKEND_ENDPOINT ?? 'https://my-backend.authjs.dev';
 
   const url = request.nextUrl.href.replace(request.nextUrl.origin, backendUrl);
   const result = await fetch(url, { headers, body: request.body });

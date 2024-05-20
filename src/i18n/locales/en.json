@@ -52,7 +52,7 @@
     "protected_link": "Protected"
   },
   "BaseTemplate": {
-    "description": "Starter code for your Next14 Boilerplate with Next Auth and Tailwind CSS",
+    "description": "Next14 is a Starter Next.js boilerplate with NextAuth, i18n, TRPC, Tailwind CSS, and Internationalization support.",
     "made_with": "Made with"
   },
   "Index": {

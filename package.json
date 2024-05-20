@@ -1,6 +1,6 @@
 {
-  "name": "next14-with-next-auth-boilerplate",
-  "description": "Next.js 14 boilerplate with NextAuth.js, TRPC, Tailwind CSS, TypeScript, Redis, Drizzle ORM, React Query, Storybook, Playwright, Jest, Testing Library, ESLint, Prettier, Husky, Lint-staged, Commitizen, Semantic Release, Spotlight, Argon2, Luxon, Zod, Superjson, Tailwind CSS, Stylelint",
+  "name": "next14-boilerplate-with-i18n-and-next-auth",
+  "description": "Next.js 14 boilerplate with NextAuth.js, Next Intl, TRPC, Tailwind CSS, TypeScript, Redis, Drizzle ORM, React Query, Storybook, Playwright, Jest, Testing Library, ESLint, Prettier, Husky, Lint-staged, Commitizen, Semantic Release, Spotlight, Argon2, Luxon, Zod, Superjson, Tailwind CSS, Stylelint",
   "version": "1.0.0",
   "author": "Paalamugan (https://github.com/paalamugan)",
   "license": "MIT",
@@ -185,13 +185,16 @@
   "packageManager": "pnpm@9.1.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paalamugan/next14-with-next-auth-boilerplate"
+    "url": "https://github.com/paalamugan/next14-boilerplate-with-i18n-and-next-auth"
   },
-  "homepage": "https://github.com/paalamugan/next14-with-next-auth-boilerplate",
+  "homepage": "https://github.com/paalamugan/next14-boilerplate-with-i18n-and-next-auth",
   "keywords": [
     "next",
     "nextjs",
     "next.js",
+    "next-intl",
+    "next-auth",
+    "i18n",
     "trpc",
     "boilerplate",
     "template",
@@ -218,7 +221,6 @@
     "commitizen",
     "semantic-release",
     "spotlight",
-    "next-auth",
     "argon2",
     "ioredis",
     "redis",

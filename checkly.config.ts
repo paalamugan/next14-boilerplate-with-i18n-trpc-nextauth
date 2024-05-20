@@ -11,7 +11,7 @@ const emailChannel = new EmailAlertChannel('email-channel-1', {
 
 export const config = defineConfig({
   projectName: 'Next14 with Next Auth Boilerplate',
-  logicalId: 'next14-with-next-auth-boilerplate',
+  logicalId: 'next14-boilerplate-with-i18n-and-next-auth',
   repoUrl: siteConfig.github.repoLink,
   checks: {
     locations: ['us-east-1', 'eu-west-1'],

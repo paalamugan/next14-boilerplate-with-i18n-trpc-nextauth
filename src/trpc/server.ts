@@ -2,10 +2,8 @@
 /* eslint-disable no-underscore-dangle */
 import 'server-only';
 
-import { defaultLocale } from 'helpers/next.locales.mjs';
 import { headers } from 'next/headers';
 import { NextRequest } from 'next/server';
-import { getToken } from 'next-auth/jwt';
 
 import { Logger } from '@/server/api/common/logger';
 import pc from '@/server/api/common/pc';
@@ -25,14 +23,11 @@ const createContext = async (): Promise<TRPCContext> => {
   const request = new Request(getUrl(), {
     headers: heads,
   });
-  const req = new NextRequest(request);
-  const token = await getToken({ req });
+  const nextRequest = new NextRequest(request);
 
   return createTRPCContext({
     headers: heads,
-    req,
-    token,
-    locale: defaultLocale.code,
+    req: nextRequest,
   });
 };
 

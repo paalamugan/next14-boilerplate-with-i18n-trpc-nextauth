@@ -47,7 +47,7 @@ describe('Base template', () => {
        */
       expect(copyrightLink).toHaveAttribute(
         'href',
-        'https://github.com/paalamugan/next14-with-next-auth-boilerplate'
+        'https://github.com/paalamugan/next14-boilerplate-with-i18n-and-next-auth'
       );
     });
   });
