@@ -16,8 +16,8 @@ const config: Config = {
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^helpers/(.*)$': '<rootDir>/helpers/$1',
     '^@/public/(.*)$': '<rootDir>/public/$1',
+    '^~/helpers/(.*)$': '<rootDir>/helpers/$1',
     'next/router': '<rootDir>/src/components/__mocks__/next-router.mjs',
     'next-intl': '<rootDir>/src/components/__mocks__/next-intl.mjs',
   },
