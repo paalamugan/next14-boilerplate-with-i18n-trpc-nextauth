@@ -17,3 +17,5 @@ storybook-static
 typings/*
 
 !.storybook/*
+
+migrations
