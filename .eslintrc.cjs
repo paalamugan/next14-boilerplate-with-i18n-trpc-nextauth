@@ -5,7 +5,7 @@ const prettierConfig = require('./prettier.config');
 /** @type {import("eslint").Linter.Config} */
 const config = {
   // Configuration for JavaScript files
-  extends: ['plugin:prettier/recommended'],
+  extends: ['turbo', 'plugin:prettier/recommended'],
   rules: {
     'prettier/prettier': ['warn', prettierConfig], // Avoid conflict rule between Prettier and Airbnb Eslint
   },
