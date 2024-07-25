@@ -188,7 +188,7 @@ jobs:
         run: pnpm type-check
 
       - name: Run unit tests
-        run: pnpm test
+        run: cross-env DATABASE_URL=file:test.db NEXTAUTH_URL=http://localhost:3000  pnpm test
 
       # - name: Upload coverage reports to Codecov
       #   uses: codecov/codecov-action@v3

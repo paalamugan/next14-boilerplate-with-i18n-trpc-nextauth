@@ -125,6 +125,7 @@
       "outputs": ["storybook-static/**"]
     },
     "test:unit": {
+      "env": ["DATABASE_URL", "NEXTAUTH_URL"],
       "inputs": [
         "src/**/*.{ts,tsx,js}",
         "src/**/*.css",
