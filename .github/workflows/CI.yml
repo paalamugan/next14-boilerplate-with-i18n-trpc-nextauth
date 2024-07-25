@@ -13,6 +13,7 @@ env:
   NEXTAUTH_SECRET: yc2t4Jt+9tl0IBPHbpkLymkPGZqIJ4pmPKAkRUSbpuI=
   NEXT_TELEMETRY_DISABLED: 1
   TURBO_TELEMETRY_DISABLED: 1
+  STORE_PATH: /tmp/pnpm-store
 
 jobs:
   cache-and-install:
@@ -188,10 +189,10 @@ jobs:
         run: pnpm type-check
 
       - name: Run unit tests
-        run: |
-          echo "DATABASE_URL=file:test.db" > .env.local
-          echo "NEXTAUTH_URL=http://localhost:3000" > .env.local
-          pnpm test
+        run: pnpm test
+        env: 
+          DATABASE_URL: ${{ env.DATABASE_URL }}
+          NEXTAUTH_URL: ${{ env.NEXTAUTH_URL }}
 
       # - name: Upload coverage reports to Codecov
       #   uses: codecov/codecov-action@v3
