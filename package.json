@@ -41,6 +41,7 @@
     "storybook:serve": "http-server storybook-static --port 6006 --silent",
     "serve-storybook": "run-s storybook:build storybook:serve",
     "test-storybook:ci": "start-server-and-test serve-storybook http://127.0.0.1:6006 test-storybook",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
     "commit": "cz"
   },

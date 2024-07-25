@@ -44,6 +44,7 @@
     "libsql",
     "LOGTAIL",
     "luxon",
+    "preinstall",
     "stylelint",
     "superjson",
     "trpc",
