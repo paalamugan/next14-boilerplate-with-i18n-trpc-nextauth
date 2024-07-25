@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # See supported Node.js release schedule at https://example.com/en/about/releases/
 
     runs-on: ubuntu-latest
 
@@ -58,7 +58,7 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # See supported Node.js release schedule at https://example.com/en/about/releases/
 
     name: Build with ${{ matrix.node-version }}
     runs-on: ubuntu-latest

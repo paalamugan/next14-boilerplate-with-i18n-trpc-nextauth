@@ -1,8 +1,8 @@
-import { siteNavigation } from 'helpers/next.data.mjs';
 import type { MessageKeys, RichTranslationValues } from 'next-intl';
 import { useTranslations } from 'next-intl';
 import type { HTMLAttributeAnchorTarget } from 'react';
 
+import { siteNavigationConfig } from '@/helpers/app.config';
 import type { FormattedMessage, NavigationEntry, NavigationKeys } from '@/types';
 
 type Context = Record<string, RichTranslationValues>;
@@ -24,7 +24,7 @@ const replaceLinkWithContext = (link: string, context?: RichTranslationValues) =
     link
   );
 
-const useSiteNavigation = () => {
+const useSiteNavigationConfig = () => {
   const t = useTranslations();
 
   const mapNavigationEntries = (entries: Navigation, context: Context = {}) => {
@@ -50,16 +50,16 @@ const useSiteNavigation = () => {
 
   const getSideNavigation = (keys: Array<NavigationKeys>, context: Context = {}) => {
     const navigationEntries: Navigation = keys.reduce(
-      (acc, key) => ({ ...acc, [key]: siteNavigation.sideNavigation[key] }),
+      (acc, key) => ({ ...acc, [key]: siteNavigationConfig.sideNavigation[key] }),
       {}
     );
 
     return mapNavigationEntries(navigationEntries, context);
   };
 
-  const navigationItems = mapNavigationEntries(siteNavigation.topNavigation);
+  const navigationItems = mapNavigationEntries(siteNavigationConfig.topNavigation);
 
   return { getSideNavigation, navigationItems };
 };
 
-export default useSiteNavigation;
+export default useSiteNavigationConfig;

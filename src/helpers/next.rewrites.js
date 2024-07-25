@@ -1,5 +1,5 @@
-import { siteRedirect } from './next.data.mjs';
-import { availableLocaleCodes } from './next.locales.mjs';
+import { siteRedirectConfig } from './app.config.js';
+import { availableLocaleCodes } from './next.locales.js';
 
 // This allows us to prefix redirects with all available locale codes so that redirects are not bound to a single locale
 // This also transforms the locale itself as a matching group that can be used for rewrites
@@ -17,7 +17,7 @@ const localesMatch = `/:locale(${availableLocaleCodes.join('|')}|)?`;
  * @return {Promise<import('next').NextConfig['redirects']>}
  */
 const redirects = async () => {
-  return siteRedirect.externals.map(({ source, destination }) => ({
+  return siteRedirectConfig.externals.map(({ source, destination }) => ({
     source: source.replace('/:locale', localesMatch),
     // We prevent permanent redirects as in general the redirects are safeguards
     // of legacy or old pages or pages that moved, and in general we don't want permanent redirects
@@ -35,12 +35,12 @@ const redirects = async () => {
  * @return {Promise<import('next').NextConfig['rewrites']>}
  */
 const rewrites = async () => {
-  const mappedRewrites = siteRedirect.internals.map(({ source, destination }) => ({
+  const mappedRewrites = siteRedirectConfig.internals.map(({ source, destination }) => ({
     source: source.replace('/:locale', localesMatch),
     destination,
   }));
 
-  const { fallback, beforeFiles, afterFiles: localAfterFiles } = siteRedirect.rewrites;
+  const { fallback, beforeFiles, afterFiles: localAfterFiles } = siteRedirectConfig.rewrites;
   const afterFiles = [...mappedRewrites, ...localAfterFiles];
 
   return { afterFiles, beforeFiles, fallback };

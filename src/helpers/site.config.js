@@ -1,6 +1,6 @@
-import { availableLocaleCodes, defaultLocale, localePrefix } from './next.locales.mjs';
+import { availableLocaleCodes, defaultLocale, localePrefix } from './next.locales.js';
 
-/** @type {import('../src/types').SiteConfig} */
+/** @type {import('../types/index.js').SiteConfig} */
 const site = {
   title: 'Next14 boilerplate with Next Auth and Next Intl',
   description:

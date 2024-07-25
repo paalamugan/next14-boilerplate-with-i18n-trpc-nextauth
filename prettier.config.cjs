@@ -25,8 +25,10 @@ const config = {
   endOfLine: 'auto',
 };
 
-module.exports = {
+const defaultConfig = {
   ...config,
   ...prettierPluginEmbedConfig,
   ...prettierPluginSqlConfig,
 };
+
+module.exports = defaultConfig;

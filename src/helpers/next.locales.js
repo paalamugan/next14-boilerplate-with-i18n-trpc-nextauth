@@ -1,4 +1,4 @@
-import localeConfig from '../src/i18n/config.json' assert { type: 'json' };
+import localeConfig from '../i18n/config.json' assert { type: 'json' };
 
 // As set of available and enabled locales for the website
 // This is used for allowing us to redirect the user to any
@@ -10,7 +10,7 @@ const availableLocaleCodes = availableLocales.map(locale => locale.code);
 
 // This provides the default locale information for the Next.js Application
 // This is marked by the unique `locale.default` property on the `en` locale
-/** @type {import('../src/types').LocaleConfig} */
+/** @type {import('../types').LocaleConfig} */
 // @ts-ignore
 const defaultLocale = availableLocales.find(locale => locale.default);
 
@@ -20,7 +20,7 @@ const availableLocalesMap = Object.fromEntries(localeConfig.map(locale => [local
 // Creates all supported locales
 const allLocaleCodes = localeConfig.map(locale => locale.code);
 
-/** @type {import('node_modules/next-intl/dist/types/src/shared/types').LocalePrefix} */
+/** @type {import('node_modules/next-intl/dist/types/src/routing/types').LocalePrefix} */
 const localePrefix = 'as-needed';
 
 export {

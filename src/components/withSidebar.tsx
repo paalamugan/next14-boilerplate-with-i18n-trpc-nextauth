@@ -2,7 +2,7 @@ import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
 import Sidebar from '@/components/Containers/Sidebar';
-import { useSiteNavigation } from '@/hooks/server';
+import { useSiteNavigationConfig } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
 type WithSidebarProps = {
@@ -11,7 +11,7 @@ type WithSidebarProps = {
 };
 
 const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context }) => {
-  const { getSideNavigation } = useSiteNavigation();
+  const { getSideNavigation } = useSiteNavigationConfig();
 
   const mappedSidebarItems = getSideNavigation(navKeys, context).map(([, { label, items }]) => ({
     groupName: label,

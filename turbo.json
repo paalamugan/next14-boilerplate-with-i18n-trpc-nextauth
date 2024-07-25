@@ -15,16 +15,25 @@
         "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
         "NEXT_PUBLIC_DATA_URL"
       ],
-      "dotEnv": [".env.development.local", ".env.development", ".env.local", ".env"]
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env.development.local",
+        ".env.development",
+        ".env.local",
+        ".env"
+      ]
     },
     "build": {
       "inputs": [
         "src/**/*.{ts,tsx}",
         "src/**/*.css",
-        "src/**/*.{mjs,json}",
+        "src/**/*.{js,json}",
         "src/**/*.{mdx,md}",
-        "helpers/**/*.{mjs}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+        "*.{md,mdx,json,ts,tsx,js,yml}",
+        ".env.production.local",
+        ".env.production",
+        ".env.local",
+        ".env"
       ],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [
@@ -36,8 +45,7 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
         "NEXT_PUBLIC_DATA_URL"
-      ],
-      "dotEnv": [".env.production.local", ".env.production", ".env.local", ".env"]
+      ]
     },
     "start": {
       "cache": false,
@@ -57,10 +65,9 @@
       "inputs": [
         "src/**/*.{ts,tsx}",
         "src/**/*.css",
-        "src/**/*.{mjs,json}",
+        "src/**/*.{js,json}",
         "src/**/*.{mdx,md}",
-        "helpers/**/*.{mjs}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+        "*.{md,mdx,json,ts,tsx,js,yml}"
       ],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [
@@ -75,9 +82,8 @@
     },
     "lint:js": {
       "inputs": [
-        "src/**/*.{ts,tsx,mjs}",
-        "src/**/*.{mjs,json}",
-        "helpers/**/*.{mjs}",
+        "src/**/*.{ts,tsx,js}",
+        "src/**/*.{js,json}",
         "{.storybook,public}/**/*.{ts,js,json}",
         "*.{json,ts,tsx}"
       ],
@@ -111,21 +117,20 @@
       "inputs": [
         "src/**/*.{ts,tsx}",
         "src/**/*.css",
-        "src/**/*.{mjs,json}",
-        "helpers/**/*.{mjs}",
+        "src/**/*.{js,json}",
         "{.storybook,public}/**/*.{ts,js,css,json}",
         "src/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+        "*.{md,mdx,json,ts,tsx,js,yml}"
       ],
       "outputs": ["storybook-static/**"]
     },
     "test:unit": {
       "inputs": [
-        "src/**/*.{ts,tsx,mjs}",
+        "src/**/*.{ts,tsx,js}",
         "src/**/*.css",
-        "src/**/*.{mjs,json}",
+        "src/**/*.{js,json}",
         "src/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+        "*.{md,mdx,json,ts,tsx,js,yml}"
       ],
       "outputs": ["coverage/**", "junit.xml"]
     }

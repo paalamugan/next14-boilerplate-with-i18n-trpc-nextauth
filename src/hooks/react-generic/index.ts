@@ -1,1 +1,1 @@
-export { default as useSiteNavigation } from './useSiteNavigation';
+export { default as useSiteNavigationConfig } from './useSiteNavigationConfig';

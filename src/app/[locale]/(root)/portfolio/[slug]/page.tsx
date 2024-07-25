@@ -49,7 +49,7 @@ const PortfolioDetail = (props: IPortfolioDetailProps) => {
       >
         <Image
           className="mx-auto mt-2"
-          src="/assets/images/better-stack-dark.png"
+          src="/static/images/better-stack-dark.png"
           alt="Better Stack"
           width={130}
           height={112}

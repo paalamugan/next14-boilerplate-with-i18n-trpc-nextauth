@@ -1,9 +1,9 @@
 'use client';
 
-import { siteConfig } from 'helpers/next.data.mjs';
 import { useLocale } from 'next-intl';
 import type { ChangeEventHandler } from 'react';
 
+import { siteConfig } from '@/helpers/app.config';
 import { usePathname, useRouter } from '@/lib/navigation';
 
 const LocaleSwitcher = () => {

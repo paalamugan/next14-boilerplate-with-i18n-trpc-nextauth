@@ -1,7 +1,8 @@
-import { siteConfig } from 'helpers/next.data.mjs';
 import { type NextFetchEvent } from 'next/server';
 import { type NextRequestWithAuth, withAuth } from 'next-auth/middleware';
 import createMiddleware from 'next-intl/middleware';
+
+import { siteConfig } from '@/helpers/app.config';
 
 import { createRouteMatcher } from './utils/routeMatcher';
 

@@ -33,8 +33,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"],
-      "~/helpers/*": ["./helpers/*"]
+      "@/public/*": ["./public/*"]
     },
     // Editor support
     "plugins": [

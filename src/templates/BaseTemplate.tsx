@@ -1,5 +1,6 @@
-import { siteConfig } from 'helpers/next.data.mjs';
 import { useTranslations } from 'next-intl';
+
+import { siteConfig } from '@/helpers/app.config';
 
 const BaseTemplate = (props: {
   leftNav: React.ReactNode;

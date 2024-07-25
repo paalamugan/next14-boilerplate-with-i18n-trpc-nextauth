@@ -1,5 +1,6 @@
-import { siteConfig } from 'helpers/next.data.mjs';
 import { getRequestConfig } from 'next-intl/server';
+
+import { siteConfig } from '@/helpers/app.config';
 
 // Loads the Application Locales/Translations Dynamically
 const loadLocaleDictionary = async (locale: string) => {

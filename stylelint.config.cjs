@@ -26,7 +26,7 @@ const config = {
   plugins: ['stylelint-order', 'stylelint-selector-bem-pattern', 'stylelint-prettier'],
   rules: {
     // Enable Prettier Integration
-    "prettier/prettier": [true, require('./prettier.config.js')],
+    'prettier/prettier': [true, require('./prettier.config.cjs')],
     // Enforces Element Class Names to be camelCase
     'selector-class-pattern': ONLY_ALLOW_CAMEL_CASE_SELECTORS,
     // Enforces Element IDs to be camelCase

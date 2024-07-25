@@ -1,4 +1,4 @@
-import { siteConfig } from 'helpers/next.data.mjs';
+import { siteConfig } from '@/helpers/app.config';
 
 import { getI18nPath } from './helpers';
 

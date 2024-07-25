@@ -2,7 +2,7 @@
 // it will create an unexpected error: Invalid PostCSS Plugin found: [0]
 
 /** @type {import('postcss-load-config').Config} */
-module.exports = {
+const config = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
@@ -14,3 +14,5 @@ module.exports = {
     'tailwindcss/nesting': {},
   },
 };
+
+export default config;

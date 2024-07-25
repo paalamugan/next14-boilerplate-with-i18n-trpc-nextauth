@@ -1,4 +1,4 @@
-import { siteConfig } from 'helpers/next.data.mjs';
+import { siteConfig } from '@/helpers/app.config';
 
 export const getBaseUrl = () => {
   if (process.env.NEXT_PUBLIC_APP_URL) {
