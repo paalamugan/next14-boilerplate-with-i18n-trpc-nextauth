@@ -62,8 +62,7 @@
 
 html,
 body {
-  @apply size-full
-          [scrollbar-gutter:auto];
+  @apply size-full [scrollbar-gutter:auto];
 }
 
 a {

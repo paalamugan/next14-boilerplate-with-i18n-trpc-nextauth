@@ -3,7 +3,6 @@
 import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
-import { siteConfig } from 'helpers/next.data.mjs';
 import type { ComponentProps, FC, HTMLAttributeAnchorTarget } from 'react';
 import { useState } from 'react';
 
@@ -12,6 +11,7 @@ import ThemeToggle from '@/components/Common/ThemeToggle';
 import NavItem from '@/components/Containers/NavBar/NavItem';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
+import { siteConfig } from '@/helpers/app.config';
 import type { FormattedMessage } from '@/types';
 
 import style from './index.module.css';

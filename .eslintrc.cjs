@@ -1,6 +1,6 @@
 const path = require('path');
 
-const prettierConfig = require('./prettier.config');
+const prettierConfig = require('./prettier.config.cjs');
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
@@ -87,7 +87,7 @@ const config = {
     },
     // Configuration for testing
     {
-      files: ['**/*.test.ts', '**/*.test.tsx', '**/{__tests__,__mocks__}/*.mjs'],
+      files: ['**/*.test.ts', '**/*.test.tsx', '**/{__tests__,__mocks__}/*.js'],
       env: { jest: true },
       plugins: ['jest', 'jest-formatting', 'testing-library', 'jest-dom'],
       extends: [

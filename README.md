@@ -199,9 +199,9 @@ After defining the environment variables in your GitHub Actions, your localizati
 You can easily configure Next 14 Boilerplate by making a search in the whole project with `FIXME:` for making quick customization. Here is some of the most important files to customize:
 
 - `public/static/favicons/apple-touch-icon.png`, `public/static/favicons/favicon.ico`, `public/static/favicons/favicon-16x16.png` and `public/static/favicons/favicon-32x32.png`: your website favicon, you can generate from [https://favicon.io/favicon-converter/](https://favicon.io/favicon-converter/)
-- `helpers/site.config.mjs`: site configuration file
+- `src/helpers/site.config.js`: site configuration file
 - `src/templates/BaseTemplate.tsx`: default theme
-- `next.config.mjs`: Next.js configuration
+- `next.config.js`: Next.js configuration
 - `.env`: default environment variables
 
 You have access to the whole code source if you need further customization. The provided code is only example for you to start your project. The sky is the limit 🚀.
@@ -279,7 +279,7 @@ The command starts a local server with the production build. Then, you can now o
 
 The project uses [Sentry](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo) to monitor errors. For development environment, you don't need to do anything: Next.js Boilerplate is already configured to use Sentry and Spotlight (Sentry for Development). All errors will be automatically sent to your local Spotlight instance. So, you can try the Sentry experience locally.
 
-For production environment, you need to create a Sentry account and create a new project. Then, in `next.config.mjs`, you need to update the `org` and `project` attribute in `withSentryConfig` function. You also need to add your Sentry DSN in `sentry.client.config.ts`, `sentry.edge.config.ts` and `sentry.server.config.ts`.
+For production environment, you need to create a Sentry account and create a new project. Then, in `next.config.js`, you need to update the `org` and `project` attribute in `withSentryConfig` function. You also need to add your Sentry DSN in `sentry.client.config.ts`, `sentry.edge.config.ts` and `sentry.server.config.ts`.
 
 ### Code coverage
 

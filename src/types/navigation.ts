@@ -20,7 +20,7 @@ export interface NavigationEntry {
   target?: HTMLAttributeAnchorTarget | undefined;
 }
 
-export interface SiteNavigation {
+export interface SiteNavigationConfig {
   topNavigation: Record<NavigationKeys, NavigationEntry>;
   sideNavigation: Record<NavigationKeys, NavigationEntry>;
 }

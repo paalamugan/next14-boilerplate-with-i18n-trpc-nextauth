@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'checkly';
 import { EmailAlertChannel, Frequency } from 'checkly/constructs';
-import { siteConfig } from 'helpers/next.data.mjs';
+
+import { siteConfig } from './src/helpers/app.config';
 
 const emailChannel = new EmailAlertChannel('email-channel-1', {
   // FIXME: add your own email address, Checkly will send you an email notification if a check fails

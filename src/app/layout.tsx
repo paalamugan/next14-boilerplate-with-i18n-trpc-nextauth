@@ -1,13 +1,13 @@
 import '@/styles/globals.css';
 
-import { siteConfig } from 'helpers/next.data.mjs';
-import { allLocaleCodes, availableLocalesMap, defaultLocale } from 'helpers/next.locales.mjs';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, unstable_setRequestLocale } from 'next-intl/server';
 import NextTopLoader from 'nextjs-toploader';
 import type { FC, PropsWithChildren } from 'react';
 
+import { siteConfig } from '@/helpers/app.config';
+import { allLocaleCodes, availableLocalesMap, defaultLocale } from '@/helpers/next.locales';
 import BaseLayout from '@/layouts/Base';
 import { cn } from '@/lib/cn';
 import { INTER, OPEN_SANS } from '@/lib/next-fonts';

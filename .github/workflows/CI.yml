@@ -13,13 +13,14 @@ env:
   NEXTAUTH_SECRET: yc2t4Jt+9tl0IBPHbpkLymkPGZqIJ4pmPKAkRUSbpuI=
   NEXT_TELEMETRY_DISABLED: 1
   TURBO_TELEMETRY_DISABLED: 1
+  REDIS_URL: redis://localhost:6379
 
 jobs:
   cache-and-install:
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # See supported Node.js release schedule at https://example.com/en/about/releases/
 
     runs-on: ubuntu-latest
 
@@ -58,7 +59,7 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # See supported Node.js release schedule at https://example.com/en/about/releases/
 
     name: Build with ${{ matrix.node-version }}
     runs-on: ubuntu-latest
@@ -108,7 +109,7 @@ jobs:
       - name: Build Next.js
         run: pnpm build
         env: 
-          REDIS_URL: redis://localhost:6379
+          REDIS_URL: ${{ env.REDIS_URL }}
 
   test:
     needs: cache-and-install
@@ -175,7 +176,7 @@ jobs:
       - name: Build Next.js for E2E tests
         run: pnpm build
         env: 
-          REDIS_URL: redis://localhost:6379
+          REDIS_URL: ${{ env.REDIS_URL }}
 
       - if: github.event_name == 'pull_request'
         name: Validate all commits from PR
@@ -189,6 +190,9 @@ jobs:
 
       - name: Run unit tests
         run: pnpm test
+        env: 
+          DATABASE_URL: ${{ env.DATABASE_URL }}
+          NEXTAUTH_URL: ${{ env.NEXTAUTH_URL }}
 
       # - name: Upload coverage reports to Codecov
       #   uses: codecov/codecov-action@v3

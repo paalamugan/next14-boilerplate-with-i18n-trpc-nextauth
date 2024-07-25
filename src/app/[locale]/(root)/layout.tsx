@@ -1,8 +1,8 @@
-import { siteConfig } from 'helpers/next.data.mjs';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 import LocaleSwitcher from '@/components/LocaleSwitcher';
+import { siteConfig } from '@/helpers/app.config';
 import { BaseTemplate } from '@/templates/BaseTemplate';
 
 const Layout = (props: { children: React.ReactNode }) => {

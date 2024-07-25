@@ -6,14 +6,14 @@ import { withSentryConfig } from '@sentry/nextjs';
 import createJiti from 'jiti';
 import withNextIntl from 'next-intl/plugin';
 
-import { BASE_PATH, ENABLE_STATIC_EXPORT } from './helpers/next.constants.mjs';
-import { redirects, rewrites } from './helpers/next.rewrites.mjs';
+import { BASE_PATH, ENABLE_STATIC_EXPORT } from './src/helpers/next.constants.js';
+import { redirects, rewrites } from './src/helpers/next.rewrites.js';
 import {
   SENTRY_DSN,
   SENTRY_ENABLE,
   SENTRY_EXTENSIONS,
   SENTRY_TUNNEL,
-} from './helpers/sentry.constants.mjs';
+} from './src/helpers/sentry.constants.js';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
@@ -126,7 +126,7 @@ const sentrySettings = {
   org: 'nextjs-boilerplate-org',
   // Define the Sentry Project on our Sentry Organisation
   project: 'nextjs-boilerplate',
-  // Sentry DSN for the Node.js Website
+  // Sentry DSN for the Your Website
   dsn: SENTRY_DSN,
 };
 

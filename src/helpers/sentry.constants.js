@@ -1,10 +1,10 @@
-import { BASE_URL, IS_DEVELOPMENT, VERCEL_ENV } from './next.constants.mjs';
+import { BASE_URL, IS_DEVELOPMENT, VERCEL_ENV } from './next.constants.js';
 
 /**
- * This is the Sentry DSN for the Node.js Website Project
+ * This is the Sentry DSN for the Your Website Project
  */
 export const SENTRY_DSN =
-  'https://02884d0745aecaadf5f780278fe5fe70@o4506191161786368.ingest.sentry.io/4506191307735040';
+  'https://02884d0745aecaAS5f780278fe5fe70@o4506191161786368.ingest.sentry.io/4506191307735040';
 
 /**
  * This states if Sentry should be enabled and bundled within our App
@@ -21,7 +21,7 @@ export const SENTRY_ENABLE = IS_DEVELOPMENT || !!VERCEL_ENV;
  * and not when it's on Production Mode (nodejs.org)
  */
 export const SENTRY_CAPTURE_RATE =
-  SENTRY_ENABLE && VERCEL_ENV && BASE_URL !== 'https://nodejs.org' ? 1.0 : 0.01;
+  SENTRY_ENABLE && VERCEL_ENV && BASE_URL !== 'https://example.com' ? 1.0 : 0.01;
 
 /**
  * Provides the Route for Sentry's Server-Side Tunnel
